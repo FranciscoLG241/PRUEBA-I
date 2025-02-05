@@ -22,6 +22,22 @@ class Cafetera(val ubicacion: String) {
     }
 
 
+
+    fun vaciar(){
+        cantidad = 0
+    }
+
+
+
+    fun agregarCafe(cantidadCafe: Int = 200){
+        cantidad += cantidadCafe
+        if (cantidad > capacidadMaxima) {
+            cantidad = capacidadMaxima
+        }
+    }
+
+
+
     override fun toString(): String {
         return "Cafetera(ubicación = $ubicacion, capacidad = $capacidadMaxima c.c., cantidad = $cantidad c.c.)"
     }
@@ -31,13 +47,15 @@ class Cafetera(val ubicacion: String) {
 
 
 
+enum class Color{
+    BLANCO, NEGRO, GRIS, AZUL, VERDE
+}
 
 
 
 
 
-
-class Taza(var color: String = "Blanco", var capacidad: Int = 50){
+class Taza(var color: Color = Color.BLANCO, var capacidad: Int = 50){
     var cantidad: Int = 0
         set(value){
             field = if (value > capacidad){
@@ -67,7 +85,7 @@ class Taza(var color: String = "Blanco", var capacidad: Int = 50){
 
 
     override fun toString(): String {
-        return "Taza(color = $color, capacidad = $capacidad c.c., cantidad = $cantidad c.c.)"
+        return "Taza(color = ${color.name}, capacidad = $capacidad c.c., cantidad = $cantidad c.c.)"
     }
 }
 
