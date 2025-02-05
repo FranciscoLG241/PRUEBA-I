@@ -38,6 +38,19 @@ class Cafetera(val ubicacion: String) {
 
 
 
+    fun servirTaza(taza: Taza) {
+        val cantidadAservir = if (cantidad >= taza.capacidad){
+            taza.capacidad
+        }else{
+            cantidad
+        }
+
+        taza.llenar(cantidadAservir)
+        cantidad -= cantidadAservir
+    }
+
+
+
     override fun toString(): String {
         return "Cafetera(ubicación = $ubicacion, capacidad = $capacidadMaxima c.c., cantidad = $cantidad c.c.)"
     }
