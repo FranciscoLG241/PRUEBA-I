@@ -23,4 +23,9 @@ class Cafetera(val ubicacion: String) {
     fun llenar(){
         this.cantidad = capacidadMaxima
     }
+
+
+    override fun toString(): String {
+        return "Cafetera(ubicación = $ubicacion, capacidad = $capacidadMaxima c.c., cantidad = $cantidad c.c.)"
+    }
 }
