@@ -18,4 +18,9 @@ class Cafetera(val ubicacion: String) {
             cantidad
         }
     }
+
+
+    fun llenar(){
+        this.cantidad = capacidadMaxima
+    }
 }
