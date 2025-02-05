@@ -1,0 +1,21 @@
+
+import java.awt.Color
+
+class Cafetera(val ubicacion: String) {
+    private var cantidad: Int = 0
+    private val capacidadMaxima: Int = 1000
+
+
+    constructor(ubicacion: String, capacidadMaxima: Int) : this(ubicacion) {
+        this.cantidad = capacidadMaxima
+    }
+
+
+    constructor(ubicacion: String, capacidadMaxima: Int, cantidad: Int) : this(ubicacion) {
+        this.cantidad = if (cantidad > capacidadMaxima) {
+            capacidadMaxima
+        } else {
+            cantidad
+        }
+    }
+}
